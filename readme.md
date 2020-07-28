@@ -118,3 +118,28 @@ if (url === "/message" && method === "POST") {
 Stream: message=Hello+from+Geoff
 text: message=Hello+from+Geoff
 ```
+
+### Task: Understanding Event Driven Code Execution
+
+- these are call back functions. and will run 'sometime'
+- the code is not blocked. So order of execution is:
+
+```JavaScript
+const server = http.createServer((req, res) => {
+
+req.on("data", (chunk) => { }); //1st async callback
+req.on("end", () => { }); //2nd async callback
+...
+res.statusCode = 302; // 1st sync before !st async and 2nd async
+res.setHeader("Location", "/");
+return res.end();
+...
+ return fs.writeFileSync("message.txt", message);
+ //'return' forces callback before next sync code
+  res.setHeader("Content-Type", "text/html"); // sync code
+  ....
+});
+
+server.listen(3000); //1st sync exe (no return as end of callback)
+```
+### Task: Blocking and Non-Blocking Code

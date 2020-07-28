@@ -18,17 +18,17 @@ const server = http.createServer((req, res) => {
     return res.end();
   }
   if (url === "/message" && method === "POST") {
-    /* Stream 'data' and read Buffer */
+    /* Stream 'data' and read Buffer "event:'data' async" */
     req.on("data", (chunk) => {
       console.log(`Stream: ${chunk}`);
       body.push(chunk);
     });
-    /* To work on each chunk we buffer them */
+    /* To work on each chunk we buffer them "event:'end' async" */
     req.on("end", () => {
       const parsedBody = Buffer.concat(body).toString();
       console.log(`text: ${parsedBody}`);
       const message = parsedBody.split("=")[1];
-      fs.writeFileSync("message.txt", message);
+      return fs.writeFileSync("message.txt", message);
     });
 
     res.statusCode = 302;
