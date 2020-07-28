@@ -71,3 +71,18 @@ const server = http.createServer((req, res) => {
 
 server.listen(3000);
 ```
+
+### Task: Redirecting Requests
+
+```JavaScript
+const fs = equire("fs");
+...
+const method=fs.method;
+...
+if (url === "/message" && method === "POST") {
+     fs.writeFileSync('message.txt', 'DUMMY');
+     res.statusCode=302;
+     res.setHeader('Location', '/');
+     return res.end();
+  }
+```
