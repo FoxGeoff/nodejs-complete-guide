@@ -23,7 +23,7 @@ server.listen(3000);
 
 - ```console.log(req.url, req.method, req.headers);```
 
-```Json
+```javaScript
 PS C:\Users\foxge\Github\nodejs-complete-guide> node app.js
 / GET {
   host: 'localhost:3000',
@@ -39,7 +39,7 @@ PS C:\Users\foxge\Github\nodejs-complete-guide> node app.js
 
 ### Task: Sending Responses
 
-```Json
+```JavaScript
 const server = http.createServer((req, res) => {
   console.log(req.url, req.method, req.headers);
   
@@ -50,4 +50,24 @@ const server = http.createServer((req, res) => {
   res.write('</html>');
   res.end();
 });
+```
+
+### Task: Routing Requests
+
+```JavaScript
+const server = http.createServer((req, res) => {
+  /* Routing Requests */
+  const url = req.url;
+  if(url === '/') {
+    res.write('<html>');
+    res.write('<head><title>Enter Message</title></head>');
+    res.write('<body><form action="/message" method="POST"><input type="text" name="message"><button type="submit">Send</button></form></body>');
+    res.write('</html>');
+    return res.end();
+  }
+  /* Note: After res.end() we must not call 'setHeader" or 'res.write()' */
+  ...
+});
+
+server.listen(3000);
 ```
