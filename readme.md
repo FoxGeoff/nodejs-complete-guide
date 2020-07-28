@@ -4,11 +4,19 @@
 
 ### Task: Creating a Node Server
 
-```Javascript
+```JavaScript
 /* app.js  */
 const server = http.createServer((req, res) => {
-  console.log(req);  
+  console.log(req);
+  // process.exit(); This will quit the 'Event Loop'
 });
 
 server.listen(3000);
 ```
+
+### Task: The node Lifecycle & Event Loop
+
+- This is kept running as long as there is a listener (req) registered.
+- This is the Event Loop. Js is single threaded and executes on events.
+
+### Task: Understanding Requests
