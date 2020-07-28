@@ -86,3 +86,35 @@ if (url === "/message" && method === "POST") {
      return res.end();
   }
 ```
+
+### Task: Parsing Request Bodies
+
+```JavaScript
+const body = [];
+...
+if (url === "/message" && method === "POST") {
+    /* Stream 'data' and read Buffer */
+    req.on("data", (chunk) => {
+      console.log(`Stream: ${chunk}`);
+      body.push(chunk);
+    });
+    /* To work on each chunk we buffer them */
+    req.on("end", () => {
+      const parsedBody = Buffer.concat(body).toString();
+      console.log(`text: ${parsedBody}`);
+      const message = parsedBody.split("=")[1];
+      fs.writeFileSync("message.txt", message);
+    });
+
+    res.statusCode = 302;
+    res.setHeader("Location", "/");
+    return res.end();
+  }
+```
+
+- Output:
+
+```JavaScript
+Stream: message=Hello+from+Geoff
+text: message=Hello+from+Geoff
+```

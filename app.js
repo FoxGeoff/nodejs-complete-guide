@@ -1,5 +1,6 @@
 const http = require("http");
 const fs = require("fs");
+const body = [];
 
 function rqListener(req, res) {}
 /* Now use the thick arrow func notation */
@@ -17,13 +18,25 @@ const server = http.createServer((req, res) => {
     return res.end();
   }
   if (url === "/message" && method === "POST") {
-     fs.writeFileSync('message.txt', 'DUMMY');
-     res.statusCode=302;
-     res.setHeader('Location', '/');
-     return res.end();
+    /* Stream 'data' and read Buffer */
+    req.on("data", (chunk) => {
+      console.log(`Stream: ${chunk}`);
+      body.push(chunk);
+    });
+    /* To work on each chunk we buffer them */
+    req.on("end", () => {
+      const parsedBody = Buffer.concat(body).toString();
+      console.log(`text: ${parsedBody}`);
+      const message = parsedBody.split("=")[1];
+      fs.writeFileSync("message.txt", message);
+    });
+
+    res.statusCode = 302;
+    res.setHeader("Location", "/");
+    return res.end();
   }
-    /* Note: After res.end() we must not call 'setHeader" or 'res.write()' */
-    res.setHeader("Content-Type", "text/html");
+  /* Note: After res.end() we must not call 'setHeader" or 'res.write()' */
+  res.setHeader("Content-Type", "text/html");
   res.write("<html>");
   res.write("<head><title>My first page</title></head>");
   res.write("<body><h1>Hello world, from node server!</h1></body>");
