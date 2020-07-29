@@ -229,3 +229,7 @@ version: (1.0.0)
 -(no code submited)
 
 ### Task: Understanding different Error Types
+
+- in VSCode start debugger (node)
+
+-(no code submited)
