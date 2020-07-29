@@ -334,3 +334,24 @@ app.use("/", (req, res, next) => {
   res.send("Hello from Express!");
 });
 ```
+
+### Task: Parsing Incoming Requests
+
+- Run: ```npm i body-parser --save```
+
+- This is not yet limited to a POST request
+
+```JavaScript
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use("/add-product", (req, res, next) => {
+  res.send(
+    '<form action="/product" method="POST"><input type="text" name="title"><button type="submit">Add</button></form>'
+  );
+});
+
+app.use("/product", (req, res, next) => {
+  console.log(req.body);
+  res.redirect("/");
+});
+```
