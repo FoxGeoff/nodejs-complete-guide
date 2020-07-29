@@ -289,12 +289,12 @@ const express = require("express");
 
 const app = express();
 
-app.use((req, res, next) => { 
+app.use((req, res, next) => {
     console.log('In 1st middleware');
     next();
 });
 
-app.use((req, res, next) => { 
+app.use((req, res, next) => {
     console.log('In 2nd middleware');
 });
 
@@ -313,8 +313,24 @@ In 2nd middleware
 - Each middleware must end with 'next();' or 'res.???'
 
 ```JavaScript
-app.use((req, res, next) => { 
+app.use((req, res, next) => {
     console.log('In 2nd middleware');
     res.send('<h1>Hello from Express</h1>');
+});
+```
+
+### Task: Expres.js - Looking Behind the Scenes
+
+-(no code comit)
+
+### Task: Handling different routes
+
+```JavaScript
+app.use("/add-product", (req, res, next) => {
+  res.send("Hello from Express product!");
+});
+
+app.use("/", (req, res, next) => {
+  res.send("Hello from Express!");
 });
 ```
