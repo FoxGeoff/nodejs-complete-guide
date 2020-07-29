@@ -262,3 +262,19 @@ version: (1.0.0)
 ```
   
 - Note the global install must be used ```npm install nodemon -g```
+
+### Task: Changing Variables in the Debug Console
+
+-Go to the left hand column while in debug and double click to change it's
+
+-value, which will run in the app.
+
+## Kanban Task #5: Working with Express.js
+
+### Task: What is Express.js
+
+-(no code added)
+
+### Task: Installing Express.js
+
+- Run: ```npm i express --save```

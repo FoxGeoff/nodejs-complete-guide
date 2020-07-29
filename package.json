@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Architectural Example Code for a node.js Project",
   "main": "app.js",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.17.1"
+  },
   "devDependencies": {
     "nodemon": "^2.0.4"
   },
