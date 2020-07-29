@@ -165,3 +165,20 @@ fs.writeFile("message.txt", message, (err) => {
 - Remember the Worker Pool is multi threaded
 - Remember when the Callback function is done, it triggers a callback to the Event Loop
 - Remember not to block main thread
+
+### Task: Using the Node Modules System
+
+- Import and export route.js file
+
+```JavaScript
+/* custom file */
+const routes = require("./routes");
+
+const server = http.createServer(routes);
+```
+
+- export file:
+
+ ```JavaScript
+ module.exports = requestHandler;
+ ```
