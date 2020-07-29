@@ -361,3 +361,48 @@ app.use("/product", (req, res, next) => {
 - ```app.post("/product", (req, res, next) => {... etc```
 
 - ```app.get("/product", (req, res, next) => {... etc```
+
+### Task: Using Express Router
+
+- Note route order does count
+- but the route is matched by Verb and Path
+
+- App.js
+
+```JavaScript
+const bodyParser = require('body-parser');
+
+const adminRoutes = require('./routes/admin');
+const shopRoutes = require('./routes/shop');
+
+const app = express();
+
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(adminRoutes); // not calling as func adminRoutes()
+app.use(shopRoutes);
+
+const server = http.createServer(app);
+
+server.listen(3000);
+```
+
+- routes/admin.js
+
+```JavaScript
+const express =  require('express');
+const router = express.Router();
+
+router.get("/add-product", (req, res, next) => {
+    res.send(
+      '<form action="/product" method="POST"><input type="text" name="title"><button type="submit">Add</button></form>'
+    );
+  });
+  
+  router.post("/product", (req, res, next) => {
+    console.log(req.body);
+    res.redirect("/");
+  });
+
+module.exports = router;
+```
