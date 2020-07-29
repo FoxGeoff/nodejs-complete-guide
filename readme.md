@@ -278,3 +278,32 @@ version: (1.0.0)
 ### Task: Installing Express.js
 
 - Run: ```npm i express --save```
+
+### Task: Adding Middleware
+
+- Example:
+
+```JavaScript
+const http = require("http");
+const express = require("express");
+
+const app = express();
+
+app.use((req, res, next) => { 
+    console.log('In 1st middleware');
+    next();
+});
+
+app.use((req, res, next) => { 
+    console.log('In 2nd middleware');
+});
+
+const server = http.createServer(app);
+
+server.listen(3000);
+```
+
+```text
+In 1st middleware
+In 2nd middleware
+```
