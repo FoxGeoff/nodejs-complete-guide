@@ -223,3 +223,9 @@ version: (1.0.0)
 ### Task: Installing 3ed Party Packages
 
 - ```npm install nodemon --save-dev```
+
+### Task: Using Nodemon for Autorestarts
+
+-(no code submited)
+
+### Task: Understanding different Error Types
