@@ -233,3 +233,32 @@ version: (1.0.0)
 - in VSCode start debugger (node)
 
 -(no code submited)
+
+### Task: Restarting the Debugger Automatically After Editing our App
+
+- On menu: view/explorer, Run/Add Configuration... < node >
+- this creates the file: {...}launch.json
+
+```JavaScript
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}\\app.js",
+            "restart": true,
+            "runtimeExecutable": "nodemon",
+            "console": "integratedTerminal"        }
+    ]
+}
+```
+  
+- Note the global install must be used ```npm install nodemon -g```
