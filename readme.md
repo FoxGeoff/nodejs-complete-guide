@@ -202,3 +202,20 @@ OR
 export.requestHandler = requestHandler;
 export.textMessage = "Just some text"
 ```
+
+## Kanban Task #4: Improving Dwvelopment Workflow and Debugging
+
+- `Fixing Errors, Developing Efficiently
+
+### Task:Understanding NPM Scripts
+
+- To generate file 'package.jason' Run:
+
+```JavaScript
+> npm init
+package name: (nodejs-complete-guide)
+version: (1.0.0)
+...
+```
+
+- Example npm script - "start: "node app.js"
