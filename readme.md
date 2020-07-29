@@ -355,3 +355,9 @@ app.use("/product", (req, res, next) => {
   res.redirect("/");
 });
 ```
+
+### Task: Limiting Middleware Execution to POST
+
+- ```app.post("/product", (req, res, next) => {... etc```
+
+- ```app.get("/product", (req, res, next) => {... etc```
