@@ -182,3 +182,23 @@ const server = http.createServer(routes);
  ```JavaScript
  module.exports = requestHandler;
  ```
+
+- Alternative from:
+
+```JavaScript
+const server = http.createServer(routes.requestHandler);
+```
+
+- Alternative form:
+
+```JavaScript
+module.exports = {
+    requestHandler: requestHandler,
+    textMessage: "Just some text"
+}
+
+OR
+
+export.requestHandler = requestHandler;
+export.textMessage = "Just some text"
+```
