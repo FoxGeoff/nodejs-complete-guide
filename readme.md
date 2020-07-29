@@ -142,4 +142,26 @@ return res.end();
 
 server.listen(3000); //1st sync exe (no return as end of callback)
 ```
+
 ### Task: Blocking and Non-Blocking Code
+
+- ```fs.writeFileSync("message.txt", message);```
+- 'writeFile' is non blocking main thread. Async Code (better)
+- 'writeFileSync' is blocking main thread. Sync Code
+
+```JavaScript
+fs.writeFile("message.txt", message, (err) => {
+  /* Run after writeFile completes*/
+  res.statusCode = 302;
+  res.setHeader("Location", "/");
+  return res.end();
+});
+```
+
+- ALL BUILT INTO NODE.JS
+- Remember node uses one single JS thread
+- Remember we always to dispatch onto the Event Loop: Event callbacks functions
+- Remember The actual callback function is sent to a Worker Pool to wait execution
+- Remember the Worker Pool is multi threaded
+- Remember when the Callback function is done, it triggers a callback to the Event Loop
+- Remember not to block main thread
