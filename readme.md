@@ -219,3 +219,7 @@ version: (1.0.0)
 ```
 
 - Example npm script - "start: "node app.js"
+
+### Task: Installing 3ed Party Packages
+
+- ```npm install nodemon --save-dev```

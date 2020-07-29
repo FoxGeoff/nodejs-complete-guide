@@ -1,0 +1,32 @@
+{
+  "name": "nodejs-complete-guide",
+  "version": "1.0.0",
+  "description": "Architectural Example Code for a node.js Project",
+  "main": "app.js",
+  "dependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FoxGeoff/nodejs-complete-guide.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "javascript",
+    "sql.",
+    "mongodb",
+    "mongoose"
+  ],
+  "author": "Geoff Fox",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FoxGeoff/nodejs-complete-guide/issues"
+  },
+  "homepage": "https://github.com/FoxGeoff/nodejs-complete-guide#readme"
+}
