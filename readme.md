@@ -444,4 +444,15 @@ router.get("/", (req, res, next) => {
 
 ### Task: Returning 404 Page
 
-- dfdf
+-in app.js 
+
+```JavaScript
+const path = require("path");
+...
+// /* => any
+app.use("/", (req, res, next) => {
+  res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
+});
+```
+
+### Task: Using a Helper Function for Navigation
