@@ -479,3 +479,13 @@ router.post("/add-product", (req, res, next) => {
 ````
 
 ### Task: Styling our Pages
+
+- WIP
+
+### Task: Serving Files Statically
+
+- public / *
+
+- Use in app.js: ```app.use(express.static(path.join(__dirname, 'public')));```
+
+- note path is (no 'public'): ```<link rel="stylesheet" href="/css/main.css">```
