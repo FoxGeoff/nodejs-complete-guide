@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 
 const adminRoutes = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
-const shareRoutes = require("./routes/share");
+const path = require("path");
 
 const app = express();
 
@@ -13,7 +13,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/admin", adminRoutes); // not calling as func adminRoutes()
 app.use("/admin", shopRoutes);
 
-app.use(shareRoutes);
+// /* => any
+app.use("/", (req, res, next) => {
+  res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
+});
 
 const server = http.createServer(app);
 
