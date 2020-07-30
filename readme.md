@@ -203,7 +203,7 @@ export.requestHandler = requestHandler;
 export.textMessage = "Just some text"
 ```
 
-## Kanban Task #4: Improving Dwvelopment Workflow and Debugging
+## Kanban Task #4: Improving Development Workflow and Debugging
 
 - `Fixing Errors, Developing Efficiently
 
@@ -424,10 +424,22 @@ app.use((req, res,next) => {
 app.use('/admin', adminRoutes);
 ...
 /* in routes/admins.js */
-// /admin/add-product
+// /admin/add-product => GET
 router.get("/add-product", (req, res, next) => {
     res.send(
       '<form action="/admin/product" method="POST"><input type="text" name="title"><button type="submit">Add</button></form>'
     );
   });
 ```
+
+### Task: Create HTML Pages
+
+- app.js
+
+```JavaScript
+router.get("/", (req, res, next) => {
+  res.sendFile(path.join(__dirname, '../', 'views', 'shop.html'));
+});
+```
+
+
