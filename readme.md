@@ -456,3 +456,26 @@ app.use("/", (req, res, next) => {
 ```
 
 ### Task: Using a Helper Function for Navigation
+
+- util/path,js
+
+```JavaScript
+const path = require("path");
+
+module.exports = path.dirname(process.mainModule.filename);
+```
+
+- routes/admin.js
+
+```JavaScript
+const rootDir = require('../util/path');
+...
+// /admin/add-product => POST
+router.post("/add-product", (req, res, next) => {
+  res.sendFile(path.join(rootDir, "../", "views", "add-product.html"));
+  res.redirect("/admin");
+});
+...
+````
+
+### Task: Styling our Pages
