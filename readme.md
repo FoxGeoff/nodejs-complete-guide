@@ -497,3 +497,5 @@ router.post("/add-product", (req, res, next) => {
 ### Task: Installing & Implementing Pug
 
 - Run: ```npm i ejs pug express-handlebars --save```
+
+### Task: Outputting Dynamic Content
