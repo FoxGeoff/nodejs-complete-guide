@@ -11,14 +11,20 @@ const path = require("path");
 const app = express();
 
 /* run db query */
-db.execute('SELECT * FROM products');
+db.execute("SELECT * FROM products")
+  .then((result) => {
+    console / log(result[0] + result[1]);
+  })
+  .catch((err) => {
+    console.loh(error);
+  });
 
 /* templating engine pug */
-app.set('view engine', 'pug');
-app.set ('views', 'views');
+app.set("view engine", "pug");
+app.set("views", "views");
 
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/admin", adminData.routes); // not calling as func adminRoutes()
 app.use("/admin", shopRoutes);

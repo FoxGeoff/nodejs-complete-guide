@@ -507,3 +507,7 @@ router.post("/add-product", (req, res, next) => {
 - Run: ```npm i mysql2 --save```
 
 ## Task: Basic SQL and Create Table
+
+## Task: Retriving Data
+
+- model/Product
