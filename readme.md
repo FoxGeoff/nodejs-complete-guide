@@ -493,3 +493,7 @@ router.post("/add-product", (req, res, next) => {
 ## Kanban Task #6: Working with Dynamic Contenet & Adding Templating Engines
 
 ### Task: Sharing Data across Requests and Users
+
+### Task: Installing & Implementing Pug
+
+- Run: ```npm i ejs pug express-handlebars --save```
