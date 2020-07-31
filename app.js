@@ -10,14 +10,14 @@ const path = require("path");
 
 const app = express();
 
-/* run db query */
-db.execute("SELECT * FROM customers")
+/* test run db query */
+db.execute("SELECT * FROM products")
   .then((result) => {
-    console / log(result[0] + result[1]);
+    console.log(JSON.stringify(result[0]));
   })
   .catch((err) => {
-    console.loh(error);
-  });
+    console.log(err);
+  }); 
 
 /* templating engine pug */
 app.set("view engine", "pug");
