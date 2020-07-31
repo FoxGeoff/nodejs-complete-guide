@@ -476,7 +476,7 @@ router.post("/add-product", (req, res, next) => {
   res.redirect("/admin");
 });
 ...
-````
+```
 
 ### Task: Styling our Pages
 
@@ -489,3 +489,7 @@ router.post("/add-product", (req, res, next) => {
 - Use in app.js: ```app.use(express.static(path.join(__dirname, 'public')));```
 
 - note path is (no 'public'): ```<link rel="stylesheet" href="/css/main.css">```
+
+## Kanban Task #6: Working with Dynamic Contenet & Adding Templating Engines
+
+### Task: Sharing Data across Requests and Users
