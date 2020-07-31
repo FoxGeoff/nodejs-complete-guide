@@ -500,6 +500,8 @@ router.post("/add-product", (req, res, next) => {
 
 ### Task: Outputting Dynamic Content
 
+
+
 ## Kanban Task #10: SQL Introduction
 
 ### Task: Connecting our App to the SQL Database

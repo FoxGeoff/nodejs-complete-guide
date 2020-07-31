@@ -11,7 +11,7 @@ const path = require("path");
 const app = express();
 
 /* run db query */
-db.execute("SELECT * FROM products")
+db.execute("SELECT * FROM customers")
   .then((result) => {
     console / log(result[0] + result[1]);
   })
