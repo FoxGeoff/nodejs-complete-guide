@@ -2,11 +2,16 @@ const http = require("http");
 const express = require("express");
 const bodyParser = require("body-parser");
 
+const db = require("./util/database");
+
 const adminData = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 const path = require("path");
 
 const app = express();
+
+/* run db query */
+db.execute('SELECT * FROM products');
 
 /* templating engine pug */
 app.set('view engine', 'pug');

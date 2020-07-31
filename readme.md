@@ -499,3 +499,11 @@ router.post("/add-product", (req, res, next) => {
 - Run: ```npm i ejs pug express-handlebars --save```
 
 ### Task: Outputting Dynamic Content
+
+## Kanban Task #10: SQL Introduction
+
+### Task: Connecting our App to the SQL Database
+
+- Run: ```npm i mysql2 --save```
+
+## Task: Basic SQL and Create Table
