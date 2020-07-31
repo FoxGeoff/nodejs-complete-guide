@@ -2,8 +2,11 @@ const express = require("express");
 const path = require("path");
 
 const rootDir = require("../util/path");
+const { exception } = require("console");
 
 const router = express.Router();
+
+const products = [];
 
 // /admin/add-product => GET
 router.get("/add-product", (req, res, next) => {
@@ -12,8 +15,17 @@ router.get("/add-product", (req, res, next) => {
 });
 // /admin/add-product => POST
 router.post("/add-product", (req, res, next) => {
-  console.log(req.body);
+  // console.log(JSON.stringify(req.body));
+
+  /* DANGER: this data is shared across ALL node users :( */
+  products.push({title: req.body.title});
   res.redirect("/admin");
 });
 
-module.exports = router;
+module.exports = {
+  routes: router,
+  products: products
+}
+
+// exports.routes = router;
+// exports.products = products;
