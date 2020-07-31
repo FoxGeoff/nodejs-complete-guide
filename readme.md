@@ -513,3 +513,5 @@ router.post("/add-product", (req, res, next) => {
 ## Task: Retriving Data
 
 - model/Product
+
+-online ref: <https://www.npmjs.com/package/mysql2>
