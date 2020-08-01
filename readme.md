@@ -502,6 +502,10 @@ router.post("/add-product", (req, res, next) => {
 
 ### Task: Converting HTML Files to Pug
 
+- TODO: Convert 404.htm to 404.pug
+
+### Task: Adding a Layout
+
 ***
 
 ## We are working here 8-1-2020
