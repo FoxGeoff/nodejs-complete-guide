@@ -3,6 +3,7 @@
   width: 200px;
   border-style: groove;
   box-shadow: black;
+  margin: 1.5rem;
 }
 
 .card__header {
