@@ -1,8 +1,8 @@
-const express =  require('express');
-const path = require('path');
+const express = require("express");
+const path = require("path");
 
 const router = express.Router();
-const adminData = require('./admin');
+const adminData = require("./admin");
 
 router.get("/", (req, res, next) => {
   console.log(adminData.products);
@@ -11,7 +11,7 @@ router.get("/", (req, res, next) => {
 
   /* using templating engine */
   const products = adminData.products;
-  res.render('shop', {prods: products, docTitle: 'Shop'});
+  res.render("shop", { prods: products, docTitle: "Shop", path: "/admin" });
 });
 
 module.exports = router;

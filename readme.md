@@ -506,6 +506,10 @@ router.post("/add-product", (req, res, next) => {
 
 ### Task: Adding a Layout
 
+### Task: Finishing the Pug Template
+
+- set active class on header
+
 ***
 
 ## We are working here 8-1-2020
