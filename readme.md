@@ -500,7 +500,13 @@ router.post("/add-product", (req, res, next) => {
 
 ### Task: Outputting Dynamic Content
 
+### Task: Converting HTML Files to Pug
 
+***
+
+## We are working here 8-1-2020
+
+***
 
 ## Kanban Task #10: SQL Introduction
 
