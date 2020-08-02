@@ -522,6 +522,8 @@ router.post("/add-product", (req, res, next) => {
 
 ### Task: Finishing the Controllers
 
+## Task: Adding a Product Model
+
 ## Kanban Task #10: SQL Introduction
 
 ### Task: Connecting our App to the SQL Database
