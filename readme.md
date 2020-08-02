@@ -554,16 +554,20 @@ router.post("/add-product", (req, res, next) => {
 
 ---
 
-## Kanban Task #10: SQL Introduction
+### Kanban Task #10: SQL Introduction
 
 ### Task: Connecting our App to the SQL Database
 
 - Run: `npm i mysql2 --save`
 
-## Task: Basic SQL and Create Table
+### Task: Basic SQL and Create Table
 
-## Task: Retriving Data
+### Task: Retriving Data
 
-- model/Product
+- model/Product the code is async and therefore uses a call back function
+
+### Task: Refactoring the File Storage Code
+
+- mvc pattern done
 
 -online ref: <https://www.npmjs.com/package/mysql2>
