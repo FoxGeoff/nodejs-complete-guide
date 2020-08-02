@@ -21,7 +21,7 @@ server.listen(3000);
 
 ### Task: Understanding Requests
 
-- ```console.log(req.url, req.method, req.headers);```
+- `console.log(req.url, req.method, req.headers);`
 
 ```javaScript
 PS C:\Users\foxge\Github\nodejs-complete-guide> node app.js
@@ -42,7 +42,7 @@ PS C:\Users\foxge\Github\nodejs-complete-guide> node app.js
 ```JavaScript
 const server = http.createServer((req, res) => {
   console.log(req.url, req.method, req.headers);
-  
+
   res.setHeader('Content-Type', 'text/html');
   res.write('<html>');
   res.write('<head><title>My first psge</title></head>');
@@ -145,7 +145,7 @@ server.listen(3000); //1st sync exe (no return as end of callback)
 
 ### Task: Blocking and Non-Blocking Code
 
-- ```fs.writeFileSync("message.txt", message);```
+- `fs.writeFileSync("message.txt", message);`
 - 'writeFile' is non blocking main thread. Async Code (better)
 - 'writeFileSync' is blocking main thread. Sync Code
 
@@ -179,9 +179,9 @@ const server = http.createServer(routes);
 
 - export file:
 
- ```JavaScript
- module.exports = requestHandler;
- ```
+```JavaScript
+module.exports = requestHandler;
+```
 
 - Alternative from:
 
@@ -222,7 +222,7 @@ version: (1.0.0)
 
 ### Task: Installing 3ed Party Packages
 
-- ```npm install nodemon --save-dev```
+- `npm install nodemon --save-dev`
 
 ### Task: Using Nodemon for Autorestarts
 
@@ -260,8 +260,8 @@ version: (1.0.0)
     ]
 }
 ```
-  
-- Note the global install must be used ```npm install nodemon -g```
+
+- Note the global install must be used `npm install nodemon -g`
 
 ### Task: Changing Variables in the Debug Console
 
@@ -277,7 +277,7 @@ version: (1.0.0)
 
 ### Task: Installing Express.js
 
-- Run: ```npm i express --save```
+- Run: `npm i express --save`
 
 ### Task: Adding Middleware
 
@@ -337,7 +337,7 @@ app.use("/", (req, res, next) => {
 
 ### Task: Parsing Incoming Requests
 
-- Run: ```npm i body-parser --save```
+- Run: `npm i body-parser --save`
 
 - This is not yet limited to a POST request
 
@@ -358,9 +358,9 @@ app.use("/product", (req, res, next) => {
 
 ### Task: Limiting Middleware Execution to POST
 
-- ```app.post("/product", (req, res, next) => {... etc```
+- `app.post("/product", (req, res, next) => {... etc`
 
-- ```app.get("/product", (req, res, next) => {... etc```
+- `app.get("/product", (req, res, next) => {... etc`
 
 ### Task: Using Express Router
 
@@ -398,7 +398,7 @@ router.get("/add-product", (req, res, next) => {
       '<form action="/product" method="POST"><input type="text" name="title"><button type="submit">Add</button></form>'
     );
   });
-  
+
   router.post("/product", (req, res, next) => {
     console.log(req.body);
     res.redirect("/");
@@ -484,11 +484,11 @@ router.post("/add-product", (req, res, next) => {
 
 ### Task: Serving Files Statically
 
-- public / *
+- public / \*
 
-- Use in app.js: ```app.use(express.static(path.join(__dirname, 'public')));```
+- Use in app.js: `app.use(express.static(path.join(__dirname, 'public')));`
 
-- note path is (no 'public'): ```<link rel="stylesheet" href="/css/main.css">```
+- note path is (no 'public'): `<link rel="stylesheet" href="/css/main.css">`
 
 ## Kanban Task #6: Working with Dynamic Contenet & Adding Templating Engines
 
@@ -496,7 +496,7 @@ router.post("/add-product", (req, res, next) => {
 
 ### Task: Installing & Implementing Pug
 
-- Run: ```npm i ejs pug express-handlebars --save```
+- Run: `npm i ejs pug express-handlebars --save`
 
 ### Task: Outputting Dynamic Content
 
@@ -510,11 +510,11 @@ router.post("/add-product", (req, res, next) => {
 
 - set active class on header
 
-***
+---
 
 ## TODO: Template using EJS or Handlebars
 
-***
+---
 
 ## Kanban Task #7: The Model View Controller (MVC)
 
@@ -524,11 +524,37 @@ router.post("/add-product", (req, res, next) => {
 
 ## Task: Adding a Product Model
 
+## Task: Storing Data in Files via the Model
+
+- model/product.save() [to a file]
+
+```JavaScript
+    save() {
+        const p = path.join(path.dirname(process.mainModle.filename),
+        'data',
+        'products.json'
+        );
+        fs.readFile(p, (err, fileContent) => {
+            let products =[];
+            if(!err) {
+                products = JSON.parse(fileContent);
+            }
+            /* Note using => scopes 'this' to class */
+            products.push(this);
+            fs.writeFile(p, JSON.stringify(products), (err) => {
+                console.log(err);
+            });
+        });
+    }
+```
+
+---
+
 ## Kanban Task #10: SQL Introduction
 
 ### Task: Connecting our App to the SQL Database
 
-- Run: ```npm i mysql2 --save```
+- Run: `npm i mysql2 --save`
 
 ## Task: Basic SQL and Create Table
 
