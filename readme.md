@@ -502,7 +502,7 @@ router.post("/add-product", (req, res, next) => {
 
 ### Task: Converting HTML Files to Pug
 
-- TODO: Convert 404.htm to 404.pug
+- Convert 404.htm to 404.pug
 
 ### Task: Adding a Layout
 
@@ -512,9 +512,13 @@ router.post("/add-product", (req, res, next) => {
 
 ***
 
-## We are working here 8-1-2020
+## TODO: Template using EJS or Handlebars
 
 ***
+
+## Kanban Task #7: The Model View Controller (MVC)
+
+### Task: Adding Controllers
 
 ## Kanban Task #10: SQL Introduction
 

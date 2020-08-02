@@ -6,32 +6,22 @@ const { exception } = require("console");
 
 const router = express.Router();
 
-const products = [];
+const productsController = require("../controllers/products");
 
 // /admin/add-product => GET
-router.get("/add-product", (req, res, next) => {
-  // res.sendFile(path.join(rootDir, "views", "add-product.html"));
+router.get("/add-product", productsController.getAddProduct);
 
-  // res.sendFile(path.join(__dirname, "../", "views", "add-product.html"));
-
-  res.render("add-product", {
-    pageTitle: "Add Product",
-    path: "/admin/add-product"
-  });
-});
 // /admin/add-product => POST
-router.post("/add-product", (req, res, next) => {
-  // console.log(JSON.stringify(req.body));
+router.post("/add-product", productsController.postAddProduct);
 
-  /* DANGER: this data is shared across ALL node users :( */
-  products.push({ title: req.body.title });
-  res.redirect("/admin");
-});
+module.exports = router;
 
+/*
 module.exports = {
   routes: router,
   products: products,
 };
+*/
 
 // exports.routes = router;
 // exports.products = products;

@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 
 const db = require("./util/database");
 
-const adminData = require("./routes/admin");
+const adminRoutes = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 const path = require("path");
 
@@ -26,7 +26,7 @@ app.set("views", "views");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/admin", adminData.routes); // not calling as func adminRoutes()
+app.use("/admin", adminRoutes); // not calling as func adminRoutes()
 app.use("/admin", shopRoutes);
 
 // /* => any
