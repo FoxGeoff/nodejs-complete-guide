@@ -10,6 +10,8 @@ const path = require("path");
 
 const app = express();
 
+const PageErrorController = require("./controllers/404");
+
 /* test run db query */
 db.execute("SELECT * FROM products")
   .then((result) => {
@@ -30,11 +32,7 @@ app.use("/admin", adminRoutes); // not calling as func adminRoutes()
 app.use("/admin", shopRoutes);
 
 // /* => any
-app.use("/", (req, res, next) => {
-  // res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
-
-  res.status(404).render("404", { pageTitle: "Page not found" });
-});
+app.use("/", PageErrorController.getPageNotFound);
 
 const server = http.createServer(app);
 
