@@ -1,4 +1,4 @@
-const Product = require('../models/product');
+const Product = require("../models/product");
 
 exports.getAddProduct = (req, res, next) => {
   res.render("add-product", {
@@ -23,8 +23,12 @@ exports.getProducts = (req, res, next) => {
   /* using static html page */
   // res.sendFile(path.join(__dirname, '../', 'views', 'shop.html'));
 
-  const products = Product.fetchAll();
-
-  /* using templating engine */
-  res.render("shop", { prods: products, pageTitle: "Shop", path: "/admin" });
+  const products = Product.fetchAll((products) => {
+    /* using templating engine */
+    res.render("shop", {
+      prods: products,
+      pageTitle: "Shop",
+      path: "/admin",
+    });
+  });
 };

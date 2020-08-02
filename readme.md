@@ -550,6 +550,8 @@ router.post("/add-product", (req, res, next) => {
 
 - model/product.feachAll() [from a file]
 
+### TAsk:  Fetching Data from Files via the Model
+
 ---
 
 ## Kanban Task #10: SQL Introduction
