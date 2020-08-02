@@ -510,11 +510,7 @@ router.post("/add-product", (req, res, next) => {
 
 - set active class on header
 
----
-
 ## TODO: Template using EJS or Handlebars
-
----
 
 ## Kanban Task #7: The Model View Controller (MVC)
 
@@ -550,17 +546,7 @@ router.post("/add-product", (req, res, next) => {
 
 - model/product.feachAll() [from a file]
 
-### TAsk:  Fetching Data from Files via the Model
-
----
-
-### Kanban Task #10: SQL Introduction
-
-### Task: Connecting our App to the SQL Database
-
-- Run: `npm i mysql2 --save`
-
-### Task: Basic SQL and Create Table
+### Task:  Fetching Data from Files via the Model
 
 ### Task: Retriving Data
 
@@ -570,4 +556,17 @@ router.post("/add-product", (req, res, next) => {
 
 - mvc pattern done
 
+## Kanban Task #8: Optional: Enhancing the App
+
+- Do these to prepare for Kanban Task #9 <= here 8-2-2020
+
+## Kanban Task #9: Dynamic Routes & Advanced Models
+
+### Kanban Task #10: SQL Introduction
+
+### Task: Connecting our App to the SQL Database
+
+- Run: `npm i mysql2 --save`
 -online ref: <https://www.npmjs.com/package/mysql2>
+
+### Task: Basic SQL and Create Table
