@@ -539,7 +539,7 @@ router.post("/add-product", (req, res, next) => {
             if(!err) {
                 products = JSON.parse(fileContent);
             }
-            /* Note using => scopes 'this' to class */
+            /* Note using => scopes 'this' to the class */
             products.push(this);
             fs.writeFile(p, JSON.stringify(products), (err) => {
                 console.log(err);
@@ -547,6 +547,8 @@ router.post("/add-product", (req, res, next) => {
         });
     }
 ```
+
+- model/product.feachAll() [from a file]
 
 ---
 
