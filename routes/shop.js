@@ -1,17 +1,9 @@
 const express = require("express");
-const path = require("path");
 
 const router = express.Router();
-const adminData = require("./admin");
 
-router.get("/", (req, res, next) => {
-  console.log(adminData.products);
-  /* using static html page */
-  // res.sendFile(path.join(__dirname, '../', 'views', 'shop.html'));
+const productsController = require("../controllers/products");
 
-  /* using templating engine */
-  const products = adminData.products;
-  res.render("shop", { prods: products, pageTitle: "Shop", path: "/admin" });
-});
+router.get("/", productsController.getProducts);
 
 module.exports = router;

@@ -8,9 +8,17 @@ exports.getAddProduct = (req, res, next) => {
 };
 
 exports.postAddProduct = (req, res, next) => {
-    // console.log(JSON.stringify(req.body));
-  
-    /* DANGER: this data is shared across ALL node users :( */
-    products.push({ title: req.body.title });
-    res.redirect("/admin");
-}
+  // console.log(JSON.stringify(req.body));
+
+  /* DANGER: this data is shared across ALL node users :( */
+  products.push({ title: req.body.title });
+  res.redirect("/admin");
+};
+
+exports.getProducts = (req, res, next) => {
+  /* using static html page */
+  // res.sendFile(path.join(__dirname, '../', 'views', 'shop.html'));
+
+  /* using templating engine */
+  res.render("shop", { prods: products, pageTitle: "Shop", path: "/admin" });
+};
