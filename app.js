@@ -21,8 +21,8 @@ db.execute("SELECT * FROM products")
     console.log(err);
   });
 
-/* templating engine pug */
-app.set("view engine", "pug");
+/* templating engine pug OR ejs */
+app.set("view engine", "ejs");
 app.set("views", "views");
 
 app.use(bodyParser.urlencoded({ extended: false }));

@@ -558,6 +558,8 @@ router.post("/add-product", (req, res, next) => {
 
 ## Kanban Task #8: Optional: Enhancing the App
 
+## Task: Creating the Shop Stucture
+
 - Do these to prepare for Kanban Task #9 <= here 8-2-2020
 
 ## Kanban Task #9: Dynamic Routes & Advanced Models
