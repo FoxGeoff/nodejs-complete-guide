@@ -514,6 +514,19 @@ router.post("/add-product", (req, res, next) => {
 
 ## Task: Working on the Layout with Partials
 
+- How to add folders to the views
+
+```JavaScript
+const products = Product.fetchAll((products) => {
+    /* using templating engine */
+    res.render("shop/shop", { // <= moved to 'views/shop/shop.est
+      prods: products,
+      pageTitle: "Shop",
+      path: "/admin",
+    });
+  });
+```
+
 ## Kanban Task #7: The Model View Controller (MVC)
 
 ### Task: Adding Controllers
