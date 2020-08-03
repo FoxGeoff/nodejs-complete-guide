@@ -575,7 +575,7 @@ const products = Product.fetchAll((products) => {
 
 ## Task: Creating the Shop Stucture
 
-- Do these to prepare for Kanban Task #9 <= here 8-2-2020
+- Do these to prepare for Kanban Task #9
 
 ## Kanban Task #9: Dynamic Routes & Advanced Models
 

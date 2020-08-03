@@ -1,7 +1,7 @@
 const Product = require("../models/product");
 
 exports.getAddProduct = (req, res, next) => {
-  res.render("add-product", {
+  res.render("admin/add-product", {
     pageTitle: "Add Product",
     path: "/admin/add-product",
   });
@@ -25,7 +25,7 @@ exports.getProducts = (req, res, next) => {
 
   const products = Product.fetchAll((products) => {
     /* using templating engine */
-    res.render("shop", {
+    res.render("shop/products-list", {
       prods: products,
       pageTitle: "Shop",
       path: "/admin",
