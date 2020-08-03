@@ -577,6 +577,8 @@ const products = Product.fetchAll((products) => {
 
 ## Task: Working on the Navigation
 
+## Task: Registering the Routes
+
 - Do these to prepare for Kanban Task #9
 
 ## Kanban Task #9: Dynamic Routes & Advanced Models
