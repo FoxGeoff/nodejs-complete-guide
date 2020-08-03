@@ -510,7 +510,9 @@ router.post("/add-product", (req, res, next) => {
 
 - set active class on header
 
-## TODO: Template using EJS or Handlebars
+## Task: Template using EJS or Handlebars
+
+## Task: Working on the Layout with Partials
 
 ## Kanban Task #7: The Model View Controller (MVC)
 
