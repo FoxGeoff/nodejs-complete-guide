@@ -43,3 +43,14 @@ exports.getProductDetails = (req, res, next) => {
     });
   });
 };
+
+exports.getAdminProducts = (req, res, next) => {
+  const products = Product.fetchAll((products) => {
+    /* using templating engine */
+    res.render("admin/products", {
+      prods: products,
+      pageTitle: "Products Administration",
+      path: "/admin/products",
+    });
+  });
+};
