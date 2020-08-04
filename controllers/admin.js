@@ -20,7 +20,7 @@ exports.getAddProduct = (req, res, next) => {
       /* using templating engine */
       res.render("admin/products", {
         prods: products,
-        pageTitle: "Products Administration",
+        pageTitle: "Admin Products",
         path: "/admin/products",
       });
     });
