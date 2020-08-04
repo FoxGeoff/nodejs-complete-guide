@@ -32,3 +32,14 @@ exports.getProducts = (req, res, next) => {
     });
   });
 };
+
+exports.getProductDetails = (req, res, next) => {
+  const products = Product.fetchAll((products) => {
+    /* using templating engine */
+    res.render("shop/product-details", {
+      prods: products,
+      pageTitle: "Product Details",
+      path: "/productdetails",
+    });
+  });
+};
