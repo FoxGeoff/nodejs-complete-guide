@@ -5,6 +5,6 @@ const ShopController = require("../controllers/shop");
 router.get("/", ShopController.getIndex);
 router.get("/products", ShopController.getProducts);
 router.get("/cart", ShopController.getCart);
-// router.get("/checkout");
+router.get("/checkout", ShopController.getCheckout);
 
 module.exports = router;

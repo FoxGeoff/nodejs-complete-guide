@@ -5,7 +5,7 @@ exports.getAddProduct = (req, res, next) => {
       pageTitle: "Add Product",
       path: "/admin/add-product",
     });
-  };
+  }
   
   exports.postAddProduct = (req, res, next) => {
     /* DANGER: this data is shared across ALL node users :( */
@@ -13,7 +13,7 @@ exports.getAddProduct = (req, res, next) => {
     product.save();
   
     res.redirect("/");
-  };
+  }
 
   exports.getProducts = (req, res, next) => {
     const products = Product.fetchAll((products) => {
@@ -24,4 +24,4 @@ exports.getAddProduct = (req, res, next) => {
         path: "/admin/products",
       });
     });
-  };
+  }

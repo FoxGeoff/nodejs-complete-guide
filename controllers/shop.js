@@ -9,7 +9,7 @@ exports.getProducts = (req, res, next) => {
       path: "/products",
     });
   });
-};
+}
 
 exports.getProducts = (req, res, next) => {
   const products = Product.fetchAll((products) => {
@@ -20,18 +20,18 @@ exports.getProducts = (req, res, next) => {
       path: "/products",
     });
   });
-};
+}
 
 exports.getIndex = (req, res, next) => {
   const products = Product.fetchAll((products) => {
     /* using templating engine */
-    res.render("shop/index", {
+    res.render("shop/product-list", {
       prods: products,
       pageTitle: "Shop",
       path: "/",
     });
   });
-};
+}
 
 exports.getCart = (req, res, next) => {
   const products = Product.fetchAll((products) => {
@@ -42,4 +42,11 @@ exports.getCart = (req, res, next) => {
       path: "/cart",
     });
   });
-};
+}
+
+exports.getCheckout = (re, res, next) => {
+  res.render('shop/checkout', {
+    path: '/checkout',
+    pageTitle: 'Checkout'
+  });
+}
