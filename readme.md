@@ -573,11 +573,9 @@ const products = Product.fetchAll((products) => {
 
 ## Kanban Task #8: Optional: Enhancing the App
 
-## Task: Creating the Shop Stucture
+### Task: Registering the Routes
 
-## Task: Working on the Navigation
-
-## Task: Registering the Routes
+### Task: Storing Product Data
 
 - Do these to prepare for Kanban Task #9
 
