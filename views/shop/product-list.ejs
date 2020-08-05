@@ -10,21 +10,24 @@
                 <% for (let poduct of prods) { %>
                     <div class="grid">
                         <article class="card product-item">
-                        <header class="card__header">
-                        <h1 class="product__title"><%= poduct.title %></h1>
-                        </header>
-                        <div class="card__image">
-                        <img
-                        <%= poduct.image %>
-                        />
-                        <div class="card__content">
-                            <h2 class= "product__price"> $ <%= poduct.price %>> </h2>
-                            <p> <%= product.description %></p>
-                            <button class="btn">Add to Cart</button>
-                        </div>
-                        <div class="card__action">
-                            
-                        </div>          
+
+                            <header class="card__header">
+                                <h1 class="product__title"><%= poduct.title %></h1>
+                            </header>
+
+                            <div class="card__image">
+                            <img
+                                src="<%= poduct.imageUrl %>"
+                                alt="<%= poduct.title %>"
+                            />
+                            </div>
+                            <div class="card__content">
+                                <h2 class="product__price">$<%= poduct.price %></h2>
+                                <p><%= poduct.description %></p>                                
+                            </div>
+                            <div class="card__action">
+                                <button class="btn">Add to Cart</button>
+                            </div>          
                         </article>
                     </div>
                 <% } %>
