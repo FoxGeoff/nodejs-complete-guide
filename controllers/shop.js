@@ -3,17 +3,6 @@ const Product = require("../models/product");
 exports.getProducts = (req, res, next) => {
   const products = Product.fetchAll((products) => {
     /* using templating engine */
-    res.render("shop/products-list", {
-      prods: products,
-      pageTitle: "All Products",
-      path: "/products",
-    });
-  });
-}
-
-exports.getProducts = (req, res, next) => {
-  const products = Product.fetchAll((products) => {
-    /* using templating engine */
     res.render("shop/products", {
       prods: products,
       pageTitle: "Products",
