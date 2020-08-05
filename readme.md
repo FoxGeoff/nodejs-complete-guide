@@ -579,6 +579,9 @@ const products = Product.fetchAll((products) => {
 
 ### Task: Displaying Product Data
 
+- For Flex Layout Referance:
+- <https://css-tricks.com/snippets/css/a-guide-to-flexbox/>
+
 - Do these to prepare for Kanban Task #9
 
 ## Kanban Task #9: Dynamic Routes & Advanced Models
