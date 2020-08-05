@@ -3,13 +3,14 @@
   <body>
     <%- include('../includes/navigation.ejs') %>
 
-    <main> this is the shop
+    <main> 
+        <h1>My Shop Products</h1>
         <% if (prods.length > 0) { %>
-            <div class="grid">
-                <h1>My Products</h1>
+            <div class="flex-container" style="display: flex; flex-flow: row wrap;  justify-content: space-around; padding: 0; margin: 0; list-style: none;">
+                
                 <% for (let poduct of prods) { %>
-                    <div class="grid">
-                        <article class="card product-item">
+                     
+                        <article class="flex-item" style=" background: tomato; margin-top: 10px; padding: 5px;">
 
                             <header class="card__header">
                                 <h1 class="product__title"><%= poduct.title %></h1>
@@ -29,7 +30,7 @@
                                 <button class="btn">Add to Cart</button>
                             </div>          
                         </article>
-                    </div>
+                    
                 <% } %>
             </div>
         <% } else { %>
