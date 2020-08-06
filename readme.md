@@ -582,7 +582,9 @@ const products = Product.fetchAll((products) => {
 - For Flex Layout Referance:
 - <https://css-tricks.com/snippets/css/a-guide-to-flexbox/>
 
-### Task: Edite & Delete Products < = here
+### Task: Edit & Delete Products
+
+### Task: Adding another Item <= HERE
 
 - Do these to prepare for Kanban Task #9
 

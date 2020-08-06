@@ -33,6 +33,17 @@ exports.getCart = (req, res, next) => {
   });
 }
 
+exports.getOrders = (req, res, next) => {
+  const products = Product.fetchAll((products) => {
+    /* using templating engine */
+    res.render("shop/orders", {
+      prods: products,
+      pageTitle: "Your Orders",
+      path: "/orders",
+    });
+  });
+}
+
 exports.getCheckout = (re, res, next) => {
   res.render('shop/checkout', {
     path: '/checkout',

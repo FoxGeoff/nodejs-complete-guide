@@ -24,7 +24,7 @@ exports.getProducts = (req, res, next) => {
     /* using templating engine */
     res.render("admin/products", {
       prods: products,
-      pageTitle: "Admin Products",
+      pageTitle: "Product Administration",
       path: "/admin/products",
     });
   });
