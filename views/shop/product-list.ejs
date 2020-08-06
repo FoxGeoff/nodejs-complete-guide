@@ -6,7 +6,7 @@
     <main>
         <% if (prods.length > 0) { %>
             <div class="grid">
-                <h1>My Products</h1>
+                <h1>My Product-list</h1>  
                 <% for (let poduct of prods) { %>
                     <div class="grid">
                         <article class="card product-item">
@@ -25,11 +25,14 @@
                                 <h2 class="product__price">$<%= poduct.price %></h2>
                                 <p><%= poduct.description %></p>                                
                             </div>
-                            <div class="card__action">
-                                <form action="/add-to-cart"  method="POST">
-                                    <button class="button">Add to Cart</button>
-                                </form>
-                            </div>          
+ 
+                            <div class="container">
+                                <a href="/details" class="button-a">Details</a>
+                             <form action="/add-to-cart" method="POST">
+                               <button class="button-btn" type="submit">Add to Cart</button>
+                             </form>
+                           </div> 
+
                         </article>
                     </div>
                 <% } %>
