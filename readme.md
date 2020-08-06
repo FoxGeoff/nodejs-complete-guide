@@ -592,7 +592,9 @@ const products = Product.fetchAll((products) => {
 
 ### Task: Adding the Product ID to the Path
 
-### Task: Extracting Dynamic Params <= HERE
+### Task: Extracting Dynamic Params
+
+### Task: Loading Product Detail Data
 
 ### Kanban Task #10: SQL Introduction
 
