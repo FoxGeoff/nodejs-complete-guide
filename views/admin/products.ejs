@@ -3,4 +3,41 @@
   <body>
     <%- include('../includes/navigation.ejs') %>
     <h1> Products Administration</h1>
+
+    <main> 
+      <h1>My Shop Products</h1>
+      <% if (prods.length > 0) { %>
+          <div class="flex-container"  >
+              
+              <% for (let poduct of prods) { %>
+                   
+                      <article class="flex-item">
+
+                          <header class="card__header">
+                              <h1 class="product__title"><%= poduct.title %></h1>
+                          </header>
+
+                          <div class="card__image">
+                          <img
+                              src="<%= poduct.imageUrl %>"
+                              alt="<%= poduct.title %>"
+                          />
+                          </div>
+                          <div class="card__content">
+                              <h2 class="product__price">$<%= poduct.price %></h2>
+                              <p><%= poduct.description %></p>                                
+                          </div>
+                          <div class="container">
+                               <a href="/admin/edit-product" class="button-a">Edit</a>
+                              <button class="button-btn">Delete</button>
+                          </div>          
+                      </article>
+                  
+              <% } %>
+          </div>
+      <% } else { %>
+          <h1>Not products found to display!</h1>
+      <% } %>
+  </main>
+
     <%- include('../includes/end.ejs') %>

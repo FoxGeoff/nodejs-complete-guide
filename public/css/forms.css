@@ -23,10 +23,17 @@
   background-color: whitesmoke
 }
 
-button {
-  width: 200px;
+ 
+.button:active {
+  background-color: blue;
+ 
+}
+
+.button {
+  width: 100px;
   height: 30px;
   border-radius: 5px;
-  background-color:rgb(34, 118, 243);
+  background-color:rgb(34, 72, 243);
   color: white;
-}
+  margin-left: 6rem;
+}  
