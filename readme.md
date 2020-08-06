@@ -584,11 +584,15 @@ const products = Product.fetchAll((products) => {
 
 ### Task: Edit & Delete Products
 
-### Task: Adding another Item <= HERE
+### Task: Adding another Item
 
 - Do these to prepare for Kanban Task #9
 
 ## Kanban Task #9: Dynamic Routes & Advanced Models
+
+### Task: Adding the Product ID to the Path
+
+### Task: Extracting Dynamic Params <= HERE
 
 ### Kanban Task #10: SQL Introduction
 
