@@ -1,0 +1,42 @@
+<%- include('../includes/head.ejs') %>
+  </head>
+  <body>
+    <%- include('../includes/navigation.ejs') %>
+
+    <main>
+        <h1> <%= pageTitle %> </h1>
+
+        <% if (prod) { %>
+            <ul>
+                <li>Id: <%= prod.id %></li>
+                <li>Title: <%= prod.title %></li>
+                <li>ImageUrl: <%= prod.imageUrl %></li>
+                <li>Price: $<%= prod.price %></li>
+                <li>Description: <%= prod.description %></li>
+            </ul>
+            <form action="/admin/add-product" method="POST">
+                <div class="form-control">
+                  <label for="title">Title:</label>
+                  <input type="text" name="title" id="title" value="<%= prod.title %>"/>
+                </div>
+                <div class="form-control">
+                  <label for="imageURL">ImgeURL:</label>
+                  <input type="text" name="imageURL" id="imageURL" value="<%= prod.imageUrl %>"/>
+                </div>
+                <div class="form-control">
+                  <label for="price">Price:</label>
+                  <input type=" number" name="price"  id="price" step="0.01" value="$<%= prod.price %>"/>
+                </div>
+                <div class="form-control">
+                  <label for="description">Description:</label>
+                  <textarea name="description"  id="description" rows="5"><%= prod.description %></textarea>
+                </div>
+                <button type="submit">Add Product</button>
+            </form>
+        <% } else { %>   
+            <h4>No Product Found!</h4>
+        <% } %>    
+    </main>
+    
+
+<%- include('../includes/end.ejs') %>
