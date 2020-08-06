@@ -598,6 +598,8 @@ const products = Product.fetchAll((products) => {
 
 ### Task: Rendering the Product Detail View <= HERE
 
+### Task: Passing Data with POST Requests
+
 ### Kanban Task #10: SQL Introduction
 
 ### Task: Connecting our App to the SQL Database
