@@ -19,7 +19,7 @@ exports.getProduct = (req, res, next) => {
     console.log(`Returning Product: ${JSON.stringify(product)}`);
     /* using templating engine */
     res.render("shop/product-details", {
-      prod: product,
+      product: product,
       pageTitle: "Product Details",
       path: `/products/${product.id}`
     });
@@ -46,6 +46,15 @@ exports.getCart = (req, res, next) => {
       path: "/cart",
     });
   });
+}
+
+exports.postCart = (req, res, next) => {
+  const prodId = req.body.productId;
+
+  /* debug */
+  console.log(prodId);
+  
+  res.redirect('/cart');
 }
 
 exports.getOrders = (req, res, next) => {

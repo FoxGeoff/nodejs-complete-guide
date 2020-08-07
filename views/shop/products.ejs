@@ -29,9 +29,8 @@
 
                             <div class="container">
                                 <a href="/products/<%= product.id %>" class="button-a">Details</a>
-                             <form action="/add-to-cart" method="POST">
-                               <button class="button-btn" type="submit">Add to Cart</button>
-                             </form>
+                            <!-- form to pass data to my cart-->
+                            <%- include('../includes/add-to-cart.ejs', {product: product}) %>
                            </div>          
                         </article>
                     

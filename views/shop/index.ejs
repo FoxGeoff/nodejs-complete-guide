@@ -8,27 +8,26 @@
         <% if (prods.length > 0) { %>
             <div class="flex-container"  >
                 
-                <% for (let poduct of prods) { %>
+                <% for (let product of prods) { %>
                      
                         <article class="flex-item">
 
                             <header class="card__header">
-                                <h1 class="product__title"><%= poduct.title %></h1>
+                                <h1 class="product__title"><%= product.title %></h1>
                             </header>
 
                             <div class="card__image">
                             <img
-                                src="<%= poduct.imageUrl %>"
-                                alt="<%= poduct.title %>"
+                                src="<%= product.imageUrl %>"
+                                alt="<%= product.title %>"
                             />
                             </div>
                             <div class="card__content">
-                                <h2 class="product__price">$<%= poduct.price %></h2>
-                                <p><%= poduct.description %></p>                                
+                                <h2 class="product__price">$<%= product.price %></h2>
+                                <p><%= product.description %></p>                                
                             </div>
-                            <div class="card__action">
-                                <button class="button">Add to Cart</button>
-                            </div>          
+                            <!-- form to pass data to my cart-->
+                            <%- include('../includes/add-to-cart.ejs', {product: product}) %>          
                         </article>
                     
                 <% } %>
