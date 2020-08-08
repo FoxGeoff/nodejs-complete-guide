@@ -8,23 +8,24 @@ const p = path.join(
 );
 
 module.exports = class {
-  static addProduct(id) {
+  static addProduct(id, productPrice) {
     /* Fetch the previous cart */
     fs.readFile(p, (err, fileContent) => {
       let cart = { products: [], totalPrice: 0 };
       if (!err) {
         cart = JSON.parse(fileContent);
       }
-    });
-    /* Analyze the cart => Find existing products */
-    const existingProduct =  cart.products.find(prod => prod.id===id);
-    let updatedProdduct;
-    if (existingProduct) {
-        updatedProduct = {...existingProduct };
+      /* Analyze the cart => Find existing product  */
+      const existingProduct = cart.products.find((prod) => prod.id === id);
+      let updatedProdduct;
+      if (existingProduct) {
+        updatedProduct = { ...existingProduct };
         updatedProduct.qty = updatedProduct.qty + 1;
-    } else {
-        updatedProduct = {id: id, qty: 1 };
-    }
+      } else {
+        updatedProduct = { id: id, qty: 1 };
+      }
+      cart.totalPrice =cart.totalPrice + productPrice;
+    }); 
     /* Add new product or increase quantity */
   }
 };
