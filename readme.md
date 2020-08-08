@@ -598,7 +598,9 @@ const products = Product.fetchAll((products) => {
 
 ### Task: Rendering the Product Detail View
 
-### Task: Passing Data with POST Requests <= HERE
+### Task: Passing Data with POST Requests
+
+### Task: Adding a Cart Model <= HERE
 
 ### Kanban Task #10: SQL Introduction
 
