@@ -602,6 +602,8 @@ const products = Product.fetchAll((products) => {
 
 ### Task: Adding a Cart Model <= HERE
 
+#### Task: Using Query Params
+
 ### Kanban Task #10: SQL Introduction
 
 ### Task: Connecting our App to the SQL Database
