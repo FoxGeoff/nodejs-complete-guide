@@ -600,7 +600,7 @@ const products = Product.fetchAll((products) => {
 
 ### Task: Passing Data with POST Requests
 
-### Task: Adding a Cart Model 
+### Task: Adding a Cart Model
 
 ### Task: Using Query Params
 
