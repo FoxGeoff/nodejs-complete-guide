@@ -22,24 +22,23 @@ exports.postAddProduct = (req, res, next) => {
 
 exports.getEditProduct = (req, res, next) => {
   const editMode = req.query.edit; // string 'true'
-
-  /*
+ 
   if (!editMode) {
     return res.redirect("/");
-  } */
+  }
   
   const prodId = req.params.productId;
   Product.findById(prodId, product => {
 
     if (!product) {
-      /* `Error: Product Id: ${prodId} not found` */
+      /* TODO: `Error: Product Id: ${prodId} not found` */
       return res.redirect("/");
     }
 
     res.render("admin/edit-product", {
       pageTitle: "Edit Product",
       path: "/admin/edit-product",
-      editing: true,
+      editing: editMode,
       product: product
     });
 
