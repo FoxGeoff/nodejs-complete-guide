@@ -31,7 +31,7 @@ exports.getEditProduct = (req, res, next) => {
   Product.findById(prodId, product => {
 
     if (!product) {
-      /* TODO: `Error: Product Id: ${prodId} not found` */
+      /* TODO: Add `Error: Product Id: ${prodId} not found` */
       return res.redirect("/");
     }
 
