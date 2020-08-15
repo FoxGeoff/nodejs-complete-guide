@@ -1,5 +1,7 @@
 const Product = require("../models/product");
 
+// exports.postEdit
+
 exports.getAddProduct = (req, res, next) => {
   res.render("admin/edit-product", {
     pageTitle: "Add Product",
@@ -43,7 +45,9 @@ exports.getEditProduct = (req, res, next) => {
     });
 
   });
+};
 
+exports.postEditProduct = (req, res, next) => { 
   
 };
 

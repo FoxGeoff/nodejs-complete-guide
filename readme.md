@@ -604,7 +604,9 @@ const products = Product.fetchAll((products) => {
 
 ### Task: Using Query Params
 
-### Task: Pre-Populating the Edit Product Page with Data <= HERE
+### Task: Pre-Populating the Edit Product Page with Data
+
+### Task: Linking to the Edit Page  <= HERE
 
 ### Kanban Task #10: SQL Introduction
 
