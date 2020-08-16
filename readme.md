@@ -608,7 +608,9 @@ const products = Product.fetchAll((products) => {
 
 ### Task: Linking to the Edit Page
 
-### Task: Editing the Product Data  <= HERE
+### Task: Editing the Product Data
+
+### Task: Adding the Product-Delete Functionality  <= HERE
 
 ### Kanban Task #10: SQL Introduction
 
