@@ -45,27 +45,27 @@ exports.getEditProduct = (req, res, next) => {
     });
   });
 }
-
+/*
 exports.getDeleteProduct = (req, res, next) => {
   const prodId = req.params.productId;
   Product.findById(prodId, (product) => {
     if (!product) {
-      /* TODO: Add `Error: Product Id: ${prodId} not found` */
+      // TODO: Add `Error: Product Id: ${prodId} not found`
       return res.redirect("/");
     }
     const prodId = req.params.productId;
     const deleteProduct = Product.findById(prodId, product) => {
 
     if(!deleteProduct) {
-      /* Pop up a User window `Not Found Product Id: ${prodId}` */
+      // Pop up a User window `Not Found Product Id: ${prodId}` 
       return res.redirect("/admin/products");
     }
-    /* Pop up a User window `Delete Product: ${deleteProduct.Title}` No/Yes */
+    // Pop up a User window `Delete Product: ${deleteProduct.Title}` No/Yes 
     // deleteProduct.delete()
     };
   });
 }
-
+*/
 exports.postEditProduct = (req, res, next) => {
   const updatedProduct = new Product(
     (id = req.body.productId),
