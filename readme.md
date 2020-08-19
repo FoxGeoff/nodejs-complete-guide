@@ -610,7 +610,9 @@ const products = Product.fetchAll((products) => {
 
 ### Task: Editing the Product Data
 
-### Task: Adding the Product-Delete Functionality  <= HERE
+### Task: Adding the Product-Delete Functionality
+
+### Task: Deleting Cart Items  <= HERE
 
 ### Kanban Task #10: SQL Introduction
 

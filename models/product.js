@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const Cart = require("./cart");
 
 const p = path.join(
   path.dirname(process.mainModule.filename),
@@ -47,19 +48,28 @@ module.exports = class Product {
     });
   }
 
-  static deleteById(id) {
-    if (this.id) {
-      getProductsFromFile((products) => {
-        const updatedProducts = products.filter((prod) => prod.id !== this.id);
-        fs.writeFile(p, JSON.stringify(updatedProducts), (err) => {
-          console.log(err);
-          if (!err) {
-            
-          }
-        });
-        cb(product);
+  /*  1- Delete product by productId
+      2- Remove from Cart
+      3- Adjust cart priceTotal 
+  */
+  static deleteById(prodId) {
+    getProductsFromFile((products) => {
+      const prodToDelete = products.find((p) => p.id === prodId);
+      const updatedProducts = products.filter((prod) => prod.id !== prodId);
+      if (!prodToDelete) {
+        console.log(`product to delete, not found, ID: ${prodId}`);
+      }
+
+      /* debug */
+      console.log(`product to delete: ${JSON.stringify(prodToDelete)}`);
+
+      fs.writeFile(p, JSON.stringify(updatedProducts), (err) => {
+        console.log(err);
+        if (!err) {
+          Cart.deleteProduct(prodId, prodToDelete.price);
+        }
       });
-    }
+    });
   }
 
   /* requires cb (callback function)  instead of return*/

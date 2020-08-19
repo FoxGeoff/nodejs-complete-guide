@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const Product = require("./product");
 
 const p = path.join(
   path.dirname(process.mainModule.filename),
@@ -36,6 +37,49 @@ module.exports = class {
       fs.writeFile(p, JSON.stringify(cart), (err) => {
         console.log(err);
       });
+    });
+  }
+
+  /*   
+      1- Remove from Cart
+      2- Adjust cart priceTotal 
+  */
+  static deleteProduct(prodId, prodPrice) {
+    /* Fetch the previous cart */
+    fs.readFile(p, (err, fileContent) => {
+      if (err) {
+        return;
+      }
+
+      const cart = JSON.parse(fileContent);
+      const updatedCart = cart;
+
+      /* debug */
+      console.log(`Cart content: }` + JSON.stringify(updatedCart));
+
+      /* Analyze the cart => Find product to be deleted */
+      const prodCartIndex = updatedCart.products.findIndex(
+        (prod) => prod.id === prodId
+      );
+
+      /* debug */
+      console.log(`prodCartIndex: ${prodCartIndex}`);
+/*
+      Product.findIndex(id, prodDelete); //
+      //* extract the deleted product's price and quatity
+      const prodDeletePrice = prodDelete.price;
+      const prodDeleteQty = prodDelete.qty;
+      //* reduce cart price by prod.price * prod.qty
+      updatedCart.totalPrice =
+        updatedCart.totalPrice - prodDeletePrice * prodDeleteQty;
+      //* remove the deleted product from the cart
+      updatedCart.products = updatedCart.products.filter(
+        (prod) => prod.id !== id
+      );
+      //* write the cart
+      fs.writeFile(p, JSON.stringify(updatedCart), (err) => {
+        console.log(err);
+      }); */
     });
   }
 };

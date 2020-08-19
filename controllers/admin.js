@@ -47,8 +47,10 @@ exports.getEditProduct = (req, res, next) => {
 }
  
 exports.postDeleteProduct = (req, res, next) => { 
-  const prodId = req.params.productId;
+  const prodId = req.body.productId;
   Product.deleteById(prodId);
+  /* TODO: best practice here would bw a callback */
+  res.redirect("/admin/products");
 };
 
 exports.postEditProduct = (req, res, next) => {
@@ -63,6 +65,7 @@ exports.postEditProduct = (req, res, next) => {
   console.log(JSON.stringify(updatedProduct));
 
   updatedProduct.save();
+  /* TODO: best practice here would bw a callback */
   res.redirect("/admin/products");
 };
 
