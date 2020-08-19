@@ -47,6 +47,21 @@ module.exports = class Product {
     });
   }
 
+  static deleteById(id) {
+    if (this.id) {
+      getProductsFromFile((products) => {
+        const updatedProducts = products.filter((prod) => prod.id !== this.id);
+        fs.writeFile(p, JSON.stringify(updatedProducts), (err) => {
+          console.log(err);
+          if (!err) {
+            
+          }
+        });
+        cb(product);
+      });
+    }
+  }
+
   /* requires cb (callback function)  instead of return*/
   static fetchAll(cb) {
     getProductsFromFile(cb);
