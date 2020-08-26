@@ -59,7 +59,6 @@ module.exports = class Product {
       if (!prodToDelete) {
         console.log(`product to delete, not found, ID: ${prodId}`);
       }
-
       /* debug */
       console.log(`product to delete: ${JSON.stringify(prodToDelete)}`);
 
@@ -67,7 +66,7 @@ module.exports = class Product {
         console.log(err);
         if (!err) {
           Cart.deleteProduct(prodId, prodToDelete.price);
-        }
+        } 
       });
     });
   }

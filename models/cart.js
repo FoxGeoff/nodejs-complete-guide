@@ -53,33 +53,38 @@ module.exports = class {
 
       const cart = JSON.parse(fileContent);
       const updatedCart = cart;
-
       /* debug */
       console.log(`Cart content: }` + JSON.stringify(updatedCart));
 
-      /* Analyze the cart => Find product to be deleted */
-      const prodCartIndex = updatedCart.products.findIndex(
+      /* Analyze the cart => Find product to be deleted (id, qty) */
+      const cartProductIndex = updatedCart.products.findIndex(
         (prod) => prod.id === prodId
       );
-
       /* debug */
-      console.log(`prodCartIndex: ${prodCartIndex}`);
-/*
-      Product.findIndex(id, prodDelete); //
+      console.log(`cartProductIndex: ${cartProductIndex}`); // <==
+
       //* extract the deleted product's price and quatity
-      const prodDeletePrice = prodDelete.price;
+      const prodDeletePrice = prodPrice;
+      const prodDelete = updatedCart.products.find(
+        (prod) => prod.id === prodId
+      );
       const prodDeleteQty = prodDelete.qty;
+      /* debug */
+      console.log(
+        `Produce: ${prodDelete.qty}   Price: ${prodDeletePrice}`
+      );
+
       //* reduce cart price by prod.price * prod.qty
       updatedCart.totalPrice =
         updatedCart.totalPrice - prodDeletePrice * prodDeleteQty;
       //* remove the deleted product from the cart
       updatedCart.products = updatedCart.products.filter(
-        (prod) => prod.id !== id
+        (prod) => prod.id !== prodId
       );
       //* write the cart
       fs.writeFile(p, JSON.stringify(updatedCart), (err) => {
         console.log(err);
-      }); */
+      });
     });
   }
 };
