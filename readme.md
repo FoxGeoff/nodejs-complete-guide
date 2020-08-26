@@ -614,6 +614,8 @@ const products = Product.fetchAll((products) => {
 
 ### Task: Deleting Cart Items (8-21-2020)  <= HERE
 
+### Task: next
+
 ### Kanban Task #10: SQL Introduction
 
 ### Task: Connecting our App to the SQL Database
