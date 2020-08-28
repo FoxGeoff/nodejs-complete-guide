@@ -9,7 +9,13 @@
         <% if (products.length > 0) { %>
 
             <% for (let p of products) { %>
-                <h4 class="product__title">Description: <%= p.productData.title%> | Price: $<%= p.productData.price%> | Quantity: <%= p.qty %></h4>           
+                
+                <h4 class="product__title">
+                    <form action="cart-delete-item" method="POST">
+                        <button class="button">Delete</button>
+                    </form>
+                    <%= p.productData.title%> @ $<%= p.productData.price%> each (<%= p.qty %> off)
+                </h4>           
             <% } %>
             <hr>
             <h4>Total: $191.00</h4>
