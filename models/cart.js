@@ -68,7 +68,10 @@ module.exports = class {
         (prod) => prod.id === prodId
       );
       /* debug */
-      console.log(`cartProductIndex: ${cartProductIndex}`); // <==
+      console.log(`cartProductIndex: ${cartProductIndex}`);
+      if(!cartProductIndex) {
+        return;
+      }
       //* extract the deleted product's price and quatity
       const prodDeletePrice = prodPrice;
       const prodDelete = updatedCart.products.find(
