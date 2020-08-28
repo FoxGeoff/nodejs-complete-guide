@@ -4,12 +4,12 @@
     <%- include('../includes/navigation.ejs') %>
 
     <main>
-        <h1> Your Cart</h1>
+        <h1> <%= pageTitle %></h1>
          
-        <% if (prods.length > 0) { %>
+        <% if (products.length > 0) { %>
 
-            <% for (let product of prods) { %>
-                <h4 class="product__title"><%= product.title %> | price: $19.19</h4>           
+            <% for (let p of products) { %>
+                <h4 class="product__title">Description: <%= p.productData.title%> | Price: $<%= p.productData.price%> | Quantity: <%= p.qty %></h4>           
             <% } %>
             <hr>
             <h4>Total: $191.00</h4>

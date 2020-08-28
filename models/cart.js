@@ -8,6 +8,15 @@ const p = path.join(
   "cart.json"
 );
 
+const getProductsFromFile = (cb) => {
+  fs.readFile(p, (err, fileContent) => {
+    if (err) {
+      return cb([]);
+    }
+    cb(JSON.parse(fileContent));
+  });
+};
+
 module.exports = class {
   static addProduct(id, productPrice) {
     /* Fetch the previous cart */
@@ -50,19 +59,16 @@ module.exports = class {
       if (err) {
         return;
       }
-
       const cart = JSON.parse(fileContent);
       const updatedCart = cart;
       /* debug */
       console.log(`Cart content: }` + JSON.stringify(updatedCart));
-
       /* Analyze the cart => Find product to be deleted (id, qty) */
       const cartProductIndex = updatedCart.products.findIndex(
         (prod) => prod.id === prodId
       );
       /* debug */
       console.log(`cartProductIndex: ${cartProductIndex}`); // <==
-
       //* extract the deleted product's price and quatity
       const prodDeletePrice = prodPrice;
       const prodDelete = updatedCart.products.find(
@@ -70,10 +76,7 @@ module.exports = class {
       );
       const prodDeleteQty = prodDelete.qty;
       /* debug */
-      console.log(
-        `Produce: ${prodDelete.qty}   Price: ${prodDeletePrice}`
-      );
-
+      console.log(`Produce: ${prodDelete.qty}   Price: ${prodDeletePrice}`);
       //* reduce cart price by prod.price * prod.qty
       updatedCart.totalPrice =
         updatedCart.totalPrice - prodDeletePrice * prodDeleteQty;
@@ -86,5 +89,10 @@ module.exports = class {
         console.log(err);
       });
     });
+  }
+
+  /* requires cb (callback function)  instead of return*/
+  static fetchAll(cb) {
+    const cart = getProductsFromFile(cb);
   }
 };
