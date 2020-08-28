@@ -61,9 +61,15 @@ exports.getCart = (req, res, next) => {
 };
 
 exports.postCart = (req, res, next) => {
-  // TBD not used yet
-
+  const prodId = req.body.productId;
+  Product.findById(prodId, product => { 
+    Cart.addProduct(prodId, product.price)  
+  });
   res.redirect("/cart");
+};
+
+exports.postCartDelete = (req, res, next) => { 
+  //TBD
 };
 
 exports.getOrders = (req, res, next) => {
