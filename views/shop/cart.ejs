@@ -12,6 +12,7 @@
                 
                 <h4 class="product__title">
                     <form action="cart-delete-item" method="POST">
+                        <input type="hidden" value="<%= p.productData.id %>" name="productId">
                         <button class="button">Delete</button>
                     </form>
                     <%= p.productData.title%> @ $<%= p.productData.price%> each (<%= p.qty %> off)
